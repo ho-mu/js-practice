@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript">
+    
+          var obj = {
+         map: function(cb) {
+           //code here;
+           var newArr=[]
+
+           this.forEach(function(){
+              newArr.push(cb(val,ind,arr))
+           })
+           return newArr
+         },
+
+         reduce: function(cb) { 
+           // code here; this should take the arrays within an array and return one array, flattened
+           var returnVar = ''
+           this.forEach(function(){
+            returnVar.concat((cb(returnVar,val, ind, arr)))
+
+           })
+           return returnVar
+         },
+         find: function(cb) {   
+           // code here;
+           var retVal =''
+
+           this.forEach(function(){
+              if(cb(val, index, arr)){
+              retVal=ind
+           }
+           })
+           
+           return retVal
+         },
+         filter: function() { 
+           // code here;
+           var newArr = [];
+          this.forEach(function(val) {
+          if (cb(val)) {
+              newArr.push (val);
+          }
+        
+    });        
+
+    return newArr
+         },
+         reject: function() { 
+           // code here;
+         }
+       }
+      // you just created a library with 5 methods!
+
+      //map
+      const arr=['Test',2,'trial',4,5,6]
+      const newArr = arr.map(function(val,ind,arr){
+          return val
+      })
+      console.log(`map: ${newArr}`)
+
+      //reduce
+      const arrReduce=['trying','to','concatenate','these']
+      const newReduceArr = arrReduce.reduce(function(returnVar,val, ind, arr){
+        return (returnVar.concat(val))
+
+      })
+      console.log(`reduce: ${newReduceArr}`)
+
+
+      //filter
+      const a=[1,2,3,4,5,10,22,23]
+
+const filteredArr = a.filter(function(val){
+  return (val%2===0)
+})
+console.log(`filter: ${filteredArr}`)
+
+//find
+var findArr = [1,24,5,6,7]
+const found=findArr.find(function( val, ind, arr){
+    if(val>=20){
+      return true
+    }
+})
+console.log(`find: ${found}`)
+  </script>
+</head>
+<body>
+
+</body>
+</html>

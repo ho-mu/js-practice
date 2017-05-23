@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function fib() {
+  		// Some variables here
+  			var sum=0
+  			var count=1
+  			var prev=0
+  			
+  			function nacci() {
+    		// do something to those variables here
+    			sum=prev+count
+    			prev=count
+    			count=sum
+
+    			console.log(sum)
+ 			 }
+  		return nacci
+		}
+
+		var fibCounter = fib();
+		fibCounter() // should console.log "1"
+		fibCounter() // should console.log "1"
+		fibCounter() // should console.log "2"
+		fibCounter() // should console.log "3"
+		fibCounter() // should console.log "5"
+		fibCounter() // should console.log "8"
+	</script>
+</head>f
+<body>
+
+</body>
+</html>
